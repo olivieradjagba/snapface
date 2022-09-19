@@ -1,22 +1,15 @@
 <div class="face-snap-card" [ngClass]="{ snapped: isSnaped }">
-  <p>{{ 51489562.25601 | number: "1.0-2" }}</p>
+  <!-- <p>{{ 51489562.25601 | number: "1.0-2" }}</p> -->
   <!---Decimal pipe-->
-  <p>{{ 0.25601 | percent: "1.0-1" }}</p>
+  <!-- <p>{{ 0.25601 | percent: "1.0-1" }}</p> -->
   <!---Percentage pipe-->
-  <p>{{ 51489562 | currency: "EUR":"code" }}</p>
+  <!-- <p>{{ 51489562 | currency: "EUR":"code" }}</p> -->
   <!---Currency pipe-->
   <h2>{{ faceSnap.title | uppercase }}</h2>
   <!---Text pipe-->
-  <p>
-    Published {{ faceSnap.createdDate | date: "on MMMM dd, yyyy 'at' HH:mm" }}
-  </p>
-  <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title" srcset="" />
+
   <p>{{ faceSnap.description }}</p>
-  <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
   <p>
-    <button (click)="onAddSnap()">{{ snapText }}</button>
-    <span [ngStyle]="{ color: 'rgba(0,' + faceSnap.snaps + ',0' }"
-      >👌{{ faceSnap.snaps }}</span
-    >
+    <button (click)="onFaceSnapView()">VIEW</button>
   </p>
 </div>
