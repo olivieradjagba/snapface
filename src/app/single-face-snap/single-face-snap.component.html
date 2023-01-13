@@ -1,23 +1,23 @@
-<div [ngClass]="{ snapped: isSnaped }" class="face-snap-card">
+<div [ngClass]="{ snapped: isSnapped }" class="face-snap-card">
   <a href="/facesnaps">Back</a>
   <!---Decimal pipe-->
   <h2>{{ faceSnap.title | uppercase }}</h2>
   <!---Percentage pipe-->
-  <img [alt]="faceSnap.title" [src]="faceSnap.imageUrl" srcset=""/>
+  <img [alt]="faceSnap.title" [src]="faceSnap.imageUrl" srcset="" />
   <!---Currency pipe-->
-  <p>{{ 51489562.25601 | number: "1.0-2" }}</p>
+  <p>{{ 51489562.25601 | number : "1.0-2" }}</p>
   <!---Text pipe-->
-  <p>{{ 0.25601 | percent: "1.0-1" }}</p>
-  <p>{{ 51489562 | currency: "EUR":"code" }}</p>
+  <p>{{ 0.25601 | percent : "1.0-1" }}</p>
+  <p>{{ 51489562 | currency : "EUR" : "code" }}</p>
   <p>
-    Published {{ faceSnap.createdDate | date: "on MMMM dd, yyyy 'at' HH:mm" }}
+    Published {{ faceSnap.createdDate | date : "on MMMM dd, yyyy 'at' HH:mm" }}
   </p>
   <p>{{ faceSnap.description }}</p>
   <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
   <p>
     <button (click)="onAddSnap()">{{ snapText }}</button>
-    <span [ngStyle]="{ color: 'rgba(0,' + faceSnap.snaps + ',0' }"
-    >👌{{ faceSnap.snaps }}
+    <span [ngStyle]="{ color: 'rgba(0,' + faceSnap.snaps + ',0' }">
+      👌{{ faceSnap.snaps }}
     </span>
   </p>
 </div>

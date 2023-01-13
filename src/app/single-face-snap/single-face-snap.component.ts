@@ -5,13 +5,14 @@ import {FaceSnapService} from "../services/face-snap.service";
 
 @Component({
   selector: "app-single-face-snap",
-  templateUrl: "./single-face-snape.component.html",
-  styleUrls: ["./single-face-snape.component.scss"],
+  templateUrl: "./single-face-snap.component.html",
+  styleUrls: ["./single-face-snap.component.scss"],
 })
-export class SingleFaceSnapeComponent implements OnInit {
+
+export class SingleFaceSnapComponent implements OnInit {
   faceSnap!: FaceSnap;
 
-  isSnaped!: boolean;
+  isSnapped!: boolean;
   snapText!: string;
 
   constructor(
@@ -21,21 +22,21 @@ export class SingleFaceSnapeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.isSnaped = false;
+    this.isSnapped = false;
     this.snapText = "Oh snap";
     const faceSnapId = +this.route.snapshot.params["id"];
     this.faceSnap = this.faceSnapService.getFaceSnapById(faceSnapId);
   }
 
   onAddSnap() {
-    if (!this.isSnaped) {
+    if (!this.isSnapped) {
       this.faceSnapService.snapFaceSnapById(this.faceSnap.id);
-      this.snapText = "Oups unsnap !";
+      this.snapText = "Ops unsnap !";
     } else {
       //this.faceSnapService.snapFaceSnapById(this.faceSnap.id, false);
       this.faceSnapService.snapFaceSnapById(this.faceSnap.id, "unsnap");
       this.snapText = "Oh snap !";
     }
-    this.isSnaped = !this.isSnaped;
+    this.isSnapped = !this.isSnapped;
   }
 }

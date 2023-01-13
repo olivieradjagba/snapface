@@ -1,13 +1,13 @@
-import { AppRoutingModule } from './app-routing.module';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {AppRoutingModule} from "./app-routing.module";
+import {NgModule} from "@angular/core";
+import {BrowserModule} from "@angular/platform-browser";
 
-import { AppComponent } from './app.component';
-import { FaceSnapComponent } from './face-snap/face-snap.component';
-import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
-import { HeaderComponent } from './header/header.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { SingleFaceSnapeComponent } from './single-face-snape/single-face-snape.component';
+import {AppComponent} from "./app.component";
+import {FaceSnapComponent} from "./face-snap/face-snap.component";
+import {FaceSnapListComponent} from "./face-snap-list/face-snap-list.component";
+import {HeaderComponent} from "./header/header.component";
+import {LandingPageComponent} from "./landing-page/landing-page.component";
+import {SingleFaceSnapComponent} from "./single-face-snap/single-face-snap.component";
 
 @NgModule({
   declarations: [
@@ -16,13 +16,14 @@ import { SingleFaceSnapeComponent } from './single-face-snape/single-face-snape.
     FaceSnapListComponent,
     HeaderComponent,
     LandingPageComponent,
-    SingleFaceSnapeComponent,
+    SingleFaceSnapComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}
 
 /* French language configuration
 import { LOCALE_ID, NgModule } from '@angular/core';
